@@ -52,6 +52,15 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				book: {
+					spine: 'hsl(var(--book-spine))',
+					page: 'hsl(var(--book-page))',
+					shadow: 'hsl(var(--book-shadow))'
+				},
+				text: {
+					primary: 'hsl(var(--text-primary))',
+					secondary: 'hsl(var(--text-secondary))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +93,55 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'page-turn': {
+					'0%': {
+						transform: 'rotateY(0deg)',
+						transformOrigin: 'left center'
+					},
+					'50%': {
+						transform: 'rotateY(-90deg)',
+						transformOrigin: 'left center'
+					},
+					'100%': {
+						transform: 'rotateY(-180deg)',
+						transformOrigin: 'left center'
+					}
+				},
+				'page-turn-back': {
+					'0%': {
+						transform: 'rotateY(-180deg)',
+						transformOrigin: 'left center'
+					},
+					'50%': {
+						transform: 'rotateY(-90deg)',
+						transformOrigin: 'left center'
+					},
+					'100%': {
+						transform: 'rotateY(0deg)',
+						transformOrigin: 'left center'
+					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'page-turn': 'page-turn 0.8s ease-in-out',
+				'page-turn-back': 'page-turn-back 0.8s ease-in-out',
+				'fade-in': 'fade-in 0.6s ease-out'
+			},
+			perspective: {
+				'1000': '1000px',
 			}
 		}
 	},
